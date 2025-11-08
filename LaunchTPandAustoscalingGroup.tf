@@ -147,7 +147,7 @@ resource "aws_sns_topic_subscription" "subscription2" {
 
 #----------------------------------Creating role for ec2 instance so that the instance can assume this role and add instances to Fleet ---------------
 resource "aws_iam_role" "SSMRole" {
-  name = "SSMRole"
+  name = "SSMRole2"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [{
