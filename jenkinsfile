@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PATH = "${PATH}:${getTerraformPath()}"
+        PATH = "${env.PATH}:/usr/local/bin"
         ACTION="apply"
 
 
@@ -49,7 +49,7 @@ pipeline {
     }
 }
 
- def getTerraformPath(){
-        def tfHome= tool name: 'terraform-14', type: 'terraform'
-        return tfHome
-    }
+//  def getTerraformPath(){
+//         def tfHome= tool name: 'terraform-14', type: 'terraform'
+//         return tfHome
+//     }
