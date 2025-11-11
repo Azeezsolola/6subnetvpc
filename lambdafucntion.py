@@ -189,24 +189,27 @@ def remediationaction(event):
 
 
 
-
-
-
-
-if __name__ == "__main__":
-    # Hardcoded test JSON event
-    event = {
-        "Findings": [
-            {
-                "Resource": {
-                    "InstanceId": "i-0e39d12c963adcc06",
-                    "InstanceState": "running"
-                }
-            }
-        ]
-    }
-
+def lambda_handler(event, context):
     remediationaction(event)
+
+
+
+
+
+# if __name__ == "__main__":
+#     # Hardcoded test JSON event
+#     event = {
+#         "Findings": [
+#             {
+#                 "Resource": {
+#                     "InstanceId": "i-0e39d12c963adcc06",
+#                     "InstanceState": "running"
+#                 }
+#             }
+#         ]
+#     }
+
+#     remediationaction(event)
     
     
     
