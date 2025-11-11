@@ -1,9 +1,9 @@
-#--------Enabling Guard duty ---------------------------------
+#=======Enabling Guard duty
 resource "aws_guardduty_detector" "MyDetector" {
   enable = true
 }
 
-#--------------Enabling the following logs so that they can accessed/monitored  by guard duty ------------------
+#=======Enabling the following logs so that they can accessed/monitored  by guard duty
 resource "aws_guardduty_detector_feature" "eks_protection" {
   detector_id = aws_guardduty_detector.MyDetector.id
   name        = "EKS_AUDIT_LOGS"
@@ -30,7 +30,7 @@ resource "aws_guardduty_detector_feature" "s3" {
   status      = "ENABLED"
 }
 
-#---------------- Creating sns topic for guard duty to send out it findings to the subscribers ---------------------------
+#===========Creating sns topic for guard duty to send out it findings to the subscribers 
 resource "aws_sns_topic" "guardduty_alerts" {
   name = "guardduty-alerts"
 }
