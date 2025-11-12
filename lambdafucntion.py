@@ -9,11 +9,13 @@ def remediationaction(event):
     sts = boto3.client('sts',region_name='us-east-1')
     response = sts.get_caller_identity()
     print(response['Arn']) 
-    Instance_ID=event['Findings'][0]['Resource']['InstanceId']
-    Instance_State=event['Findings'][0]['Resource']['InstanceState']
+    
+    detail = event['detail']
+    resource = detail['resource']
+    Instance_ID = resource['instanceDetails']['instanceId']
+    
 
     print("This is the isnstance ID:",Instance_ID)
-    print("This is the instance State:",Instance_State)
 
     #===Describing the compromised instance 
     ec2=boto3.client('ec2',region_name='us-east-1')
