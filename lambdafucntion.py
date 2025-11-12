@@ -191,6 +191,11 @@ def remediationaction(event):
 
 def lambda_handler(event, context):
     remediationaction(event)
+    return {
+        'statusCode': 200,
+        'body': 'Remediation complete'
+    }
+
 
 
 

@@ -184,7 +184,7 @@ resource "aws_lambda_function" "quarantine" {
   filename         = "lambdafunction.zip"        #contains my python files
   function_name    = "guardduty-remediation-process"
   role             = aws_iam_role.lambda_role.arn
-  handler          = "lambdafunction.remediationaction"
+  handler          = "lambdafucntion.lambda_handler"
   runtime          = "python3.10"
   timeout          = 300
   memory_size      = 256
